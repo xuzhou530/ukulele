@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 这里的name为struts2-core.jar下的default.properties的键值对 的name值   contant这个标签是来 
+		常用的有 martipart 文件最大包  
+		struts.xml修改时自动加载 
+	 -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 默认访问action结尾的方式 -->
+	<constant name="struts.action.extension" value="action,do,,"/>
+	<!-- 修改默认文件上传的大小 -->
+	<constant name="struts.multipart.maxSize" value="2097152000"></constant>
+   <!-- strut标签使用的模板freemarker -->
+   <constant name="struts.ui.theme" value="simple"></constant>
+   <!-- 表示Action由Spring来进行创建，可以直接使用Spring依赖注入来注入 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 定义异常处理界面 -->
+   	
+    <package name="default" namespace="/HouTai"  extends="struts-default">
+		<global-results>
+    		<result name="redirect" type="redirect">${url}</result>
+    		<result name="exception">/manage/error.jsp</result>
+    	</global-results> 
+    	
+    	<global-exception-mappings>
+   			<exception-mapping result="exception" exception="com.xiaojiaoshi.exception.XiaoJiaoShiException"></exception-mapping>
+   		</global-exception-mappings> 
+   		
+   		<!-- 用户登录页面 -->
+   		<action name="userLoginInput" method="userLoginInput" class="userAction">
+   			<result name="success" >/manage/login.jsp</result>
+   		</action>
+   		
+   		<action name="login" method="login" class="userAction">
+   			<result name="error" >/manage/login.jsp</result>
+   		</action>
+   		
+   		<!--  用户跳转到用户信息页面  -->
+   		<action name="userInfo" method="userInfo" class="userAction">
+   			<result name="success" >/manage/userInfo.jsp</result>
+   		</action>
+   		
+   		
+   		
+   		<!-- 注册管理员 -->
+   		<action name="addUser" method="addUser" class="userAction">
+   		</action>
+   		
+   		<!--  更新用户 -->
+   		<action name="updateUser" method="updateUser" class="userAction">
+   		</action>
+		
+		
+		<!-- 仅仅是页面跳转 -->
+		  <action name="*_*" method="{1}" class="{2}Action" > 
+   			<result name="success">/manage/{2}/{1}.jsp</result>
+   		</action> 
+   		
+		<!-- 添加乐谱 -->
+		<action name="addMusic" method="addMusic" class="musicAction">
+		</action> 
+		<!-- 乐谱列表 -->
+	 	<action name="listMusic" method="listMusic" class="musicAction">
+			<result name="success">/manage/music/musicList.jsp</result>
+		</action> 
+		
+		<!--更新曲谱列表  -->
+		<action name="deleteMusic" method="deleteMusic" class="musicAction">
+		</action>
+		
+		<!--  -->
+		<action name="updateMusic" method="updateMusic" class="musicAction">
+		</action>
+		
+		
+		
+		<!--视频处理  -->
+		<!-- 添加视频 -->
+		<action name="addVedio" method="addVedio" class="vedioAction">
+		</action> 
+		<!-- 视频列表 -->
+	 	<action name="listVedio" method="listVedio" class="vedioAction">
+			<result name="success">/manage/vedio/vedioList.jsp</result>
+		</action> 
+		
+		<!--更新视频列表  -->
+		<action name="deleteVedio" method="deleteVedio" class="vedioAction">
+		</action>
+		
+		<!--  -->
+		<action name="updateVedio" method="updateVedio" class="vedioAction">
+		</action>
+		
+		<!--  论坛处理   -->
+		<action name="update_cart" method="updateTop" class="cartAction">
+		</action>
+		
+		<action name="deleteCart" method="delete" class="cartAction">
+		</action>
+		
+		<action name="listCart" method="list" class="cartAction">
+			<result name="success">/manage/cart/cartList.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 注销管理员并返回注册页面  -->
+		<action name="logout" method="userLogout" class="logout">
+   		</action>
+   		
+   		
+    </package>
+    
+    
+    <package name="cart" namespace="/cart" extends="struts-default">
+    	<global-results>
+    		<result name="redirect" type="redirect">${url}</result>
+    		<result name="exception">/manage/error.jsp</result>
+    	</global-results> 
+    	
+    	<global-exception-mappings>
+   			<exception-mapping result="exception" exception="com.xiaojiaoshi.exception.XiaoJiaoShiException"></exception-mapping>
+   		</global-exception-mappings> 
+   		
+   		<action name="add" method="add" class="cartAction">
+   		</action>
+   		
+   		<action name="update" method="update" class="cartAction">
+   		</action>
+    	
+    	<action name="pagerCart" method="pagerCart" class="cartAction">
+    		<result name="success">/show/cart.jsp</result>
+   		</action>
+   		
+   		<action name="show" method="show" class="cartAction">
+			<result name="success">/show/cart_info.jsp</result>
+		</action>
+		
+		<action name="update_danger" method="updatedanger" class="cartAction" />
+		<action name="update_topcount" method="updatetopCount" class="cartAction" />
+		<action name="update_bottomCount" method="updatebottomCount" class="cartAction" />
+
+    </package>
+    
+    
+    <package name="comment" namespace="/comment" extends="struts-default">
+    	<global-results>
+    		<result name="redirect" type="redirect">${url}</result>
+    		<result name="exception">/manage/error.jsp</result>
+    	</global-results> 
+    	
+    	<global-exception-mappings>
+   			<exception-mapping result="exception" exception="com.xiaojiaoshi.exception.XiaoJiaoShiException"></exception-mapping>
+   		</global-exception-mappings> 
+   		
+   		<action name="add" method="add" class="commentAction">
+   		</action>
+   		
+   		<action name="update_danger" method="updateDanger" class="commentAction" />
+   		<action name="update_topCount" method="updatetopCount" class="commentAction" />
+   		<action name="update_bottomCount" method="updateBottomCount" class="commentAction" />
+    	
+    	<action name="addAjax" method="addAjax" class="commentAction" />
+    </package>
+    
+    
+    <package name="music" namespace="/music" extends="struts-default">
+		<global-results>
+    		<result name="redirect" type="redirect">${url}</result>
+    		<result name="exception">/manage/error.jsp</result>
+    	</global-results>
+    	
+    	<global-exception-mappings>
+   			<exception-mapping result="exception" exception="com.xiaojiaoshi.exception.XiaoJiaoShiException"></exception-mapping>
+   		</global-exception-mappings> 
+   		
+		<action name="showMusicList" method="showMusicList" class="musicAction">
+			<result name="success">/show/music.jsp</result>
+		</action>
+		
+		<action name="show" method="showMusic" class="musicAction">
+			<result name="success">/show/music_info.jsp</result>
+		</action>
+		<action name="ukuleleAbout" method="ukuleleAbout" class="musicAction">
+			<result name="success">/show/ukuleleAbout.jsp</result>
+		</action>
+	</package>
+	<package name="index" namespace="" extends="struts-default">
+			<action name="index" method="indexAction" class="vedioAction">
+				<result name="success">/show/index.jsp</result>
+			</action>
+	</package>
+	
+	<package name="vedio" namespace="/vedio" extends="struts-default">
+		<global-results>
+    		<result name="redirect" type="redirect">${url}</result>
+    		<result name="exception">/manage/error.jsp</result>
+    	</global-results>
+    	
+    	<global-exception-mappings>
+   			<exception-mapping result="exception" exception="com.xiaojiaoshi.exception.XiaoJiaoShiException"></exception-mapping>
+   		</global-exception-mappings> 
+   		
+		<action name="showVedioList" method="showVedioList" class="vedioAction">
+			<result name="success">/show/vedio.jsp</result>
+		</action>
+		
+		<action name="show" method="showVedio" class="vedioAction">
+			<result name="success">/show/vedio_info.jsp</result>
+		</action>
+		
+	</package>
+    
+    <package name="ajax" namespace="/Ajax" extends="json-default">
+    	<action name="picAction" class="pictureAction" method="addPicTure"> 
+		 <result type="json">  
+              <param name="excludeNullProperties">true</param>  
+           </result>  
+      	</action>
+    	<action name="ajaxList" method="ajaxList" class="commentAction" >
+    		<result type="json">  
+             	<param name="root">comments</param>
+             	<param name="excludeNullProperties">true</param>
+           </result>  
+    	</action>
+    </package>
+
+</struts>

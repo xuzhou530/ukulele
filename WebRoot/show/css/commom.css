@@ -1,0 +1,71 @@
+/*��ʼ��*/
+ul,li,p{margin: 0; padding: 0; list-style: none}
+p{ margin: 0; padding: 0%}
+a{  text-decoration: none;color: #777; }
+img{ border: 0;}
+label{font-weight: normal}
+a:hover{ text-decoration:  none;  color: #ED8A36}
+body{ background: #E5dcd1; font-family: "微软雅黑"; font-size: 12px; padding: 0; margin: 0 }
+.clearfix:after{ content: ""; display: block; clear: both;}
+.fl{ float: left }
+.fr{ float: right }
+.clear{ clear: both}
+.textOverflow { overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+.container{ width: 1200px; margin: 0 auto;}
+.relative { position: relative}
+/*  commoms begin */
+.uptodate {  box-sizing: border-box; }
+.uptodate>p{ padding-left: 14px;  color: #404142; padding-top: 5px; line-height: 30px; padding-right: 20px; }
+.uptodate>p span{ font-size: 18px; }
+.uptodate>p a { font-size: 14px; color: #404142 }
+.uptodate {  background:#ffffff; float: left;    }
+.uptodate ul{ padding-left: 7px; padding-right: 15px; }
+.uptodate ul li:first-child{ line-height: normal}
+.uptodate ul li{ line-height: 35px; padding-left: 7px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis }
+.uptodate ul li a{ color: #414042; font-size: 14px; transition: all .3s}
+.uptodate ul li.active a,.uptodate ul li:hover a{ color: #f9a984}
+.comments {
+    height: 35px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+}
+.comment .commentsImg{ width:42px;}
+.comment ul li {
+    border-bottom: 1px dotted #dddddd;}
+
+.icon1{ background: url("../img/date.png") no-repeat center; width: 20px; height: 20px; display: inline-block; position: relative; top: 3px; }
+.icon2{ background: url("../img/scanf.png") no-repeat center; width: 20px; height: 20px; display: inline-block; position: relative; top: 3px; margin-right: 5px; }
+.icon3{ background: url("../img/comment.png") no-repeat center; width: 20px; height: 20px; display: inline-block; position: relative; top: 3px; margin-right: 5px; }
+.icon4{ background: url("../img/shoucang.png") no-repeat center; width: 20px; height: 20px; display: inline-block; position: relative; top: 3px; margin-right: 1px;}
+.icon5{ background: url("../img/hot-01.png") no-repeat center; width: 35px; height: 30px; display: inline-block; position: relative; top: 3px; margin-right: 1px;}
+.icon6{  width: 16px; height: 18px; display: inline-block; position: relative; top: 5px; left: -3px;margin-right: 1px;}
+
+/*   header begin  */
+#header{ background: #414142; height: 30px; line-height: 30px; font-size: 12px; color: #ffffff; box-shadow: 0 0 10px #555;}
+#header .container>p{ display: inline-block; opacity: .8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);}
+.third_login,.login{ float: right; display: inline-block; height: 16px; }
+.third_login li,.login li{ float: left; padding: 0 5px; display: inline-block }
+.login li{  opacity: .8;  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
+.login li a{ color: #ffffff; }
+.third_login li{ position: relative; top: 5px}
+/* header end*/
+
+/* nav begin*/
+#iNavbar { height: 170px; }
+.Ibrand{ height: 80px; margin-top: 60px; float: left; width: 25%; }
+.nav_search{ width: 75%; float: left;}
+.nav_search .search{ width: 248px;  margin-top: 40px; float: right;  margin-right: 30px;  }
+.nav_search .search input{ height: 30px; width: 216px; vertical-align: middle; float: left; border: 1px solid #3c2415; line-height: 30px; box-sizing: border-box; padding-left: 10px; }
+.iInputAddon{ background: url("../img/search.png") no-repeat center,#3c2415; ; height: 30px; width: 30px;
+    display: inline-block; float: left }
+.iNav{ float: right; margin-top: 40px;}
+.iNav li{ height: 40px; display: inline-block; padding: 0 40px; float: left; font-size: 18px;  }
+.iNav li a{ color: #3c2415}
+
+/* footer end */
+#footer{ height: 227px; background: #404142; border:1px solid transparent; margin-top: 80px; }
+#footer .ftCon{ width: 600px; height: 142px;margin: 48px auto 0; color: #808285; font-size: 14px; line-height: 36px; padding: 15px;  }
+

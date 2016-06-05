@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/manage/js/moment.min.js,WebRoot/manage/ckeditor/ckeditor.js,WebRoot/show/ckeditor/ckeditor.js,WebRoot/manage/fonts/ionicons.svg,WebRoot/manage/fonts/fontawesome-webfont.svg,WebRoot/manage/dist/js/app.min.js,WebRoot/manage/plugins/jQuery/jQuery-2.1.4.min.js,WebRoot/show/js/jquery.min.js,WebRoot/show/js/respond.min.js,WebRoot/manage/fonts/glyphicons-halflings-regular.svg,WebRoot/manage/js/respond.min.js
+validator.Unchecked=

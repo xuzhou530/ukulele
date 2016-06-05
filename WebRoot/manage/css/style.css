@@ -1,0 +1,15 @@
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p { color:#72AFD2}
+body{ font-family:"微软雅黑"}
+
+/*  前端分页的相关设置 */
+.dataTables_paginate.paging_simple_numbers{ text-align: right }
+.pagination{ margin: 0 20px; }
+.dataTables_wrapper .row{ margin: 0 0;}
+.form-group .control-label{ color: #aaaaaa; font-weight: normal }
+
+/* userPic */
+.userpic{width: 130px; height: 130px; border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 0 3px #999; position: relative  }
+.userpic img{width: 130px; height: 130px; }
+.userpic div{ background: rgba(0,0,0,.4 ) url("../dist/img/loader.gif") no-repeat center; position: absolute; left: 0;
+    top: 0; z-index: 100; width: 100%; height: 100% ; display: none }
+.user-panel > .image.image > img{ width: 40px; height: 38px;}
